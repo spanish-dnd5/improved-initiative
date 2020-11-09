@@ -1,0 +1,63 @@
+{
+  "Creature.srd5spanishalce": {
+    "Id": "srd5spanishalce",
+    "Name": "Alce",
+    "Path": "Spanish",
+    "Source": "SRD Espanol",
+    "Type": "Grande Bestia, no alineada",
+    "HP": {
+      "Value": 13,
+      "Notes": "(2d10+2)"
+    },
+    "AC": {
+      "Value": 10,
+      "Notes": ""
+    },
+    "InitiativeModifier": 0,
+    "InitiativeAdvantage": false,
+    "Speed": ["caminando 50"],
+    "Abilities": {
+      "Str": 16,
+      "Dex": 10,
+      "Con": 12,
+      "Int": 2,
+      "Wis": 10,
+      "Cha": 6
+    },
+    "DamageVulnerabilities": [],
+    "DamageResistances": [],
+    "DamageImmunities": [],
+    "ConditionImmunities": [],
+    "Saves": [],
+    "Skills": [],
+    "Senses": ["Percepción pasiva 10"],
+    "Languages": [],
+    "Challenge": "1/4 (50 PX)",
+    "Traits": [
+      {
+        "Name": "Carga",
+        "Content": "Si el alce se mueve al menos 20 pies en línea recta hacia un objetivo y le impacta con un ataque de embestir en el mismo turno, el objetivo recibe 7 (2d6) puntos de daño adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza CD 13 para no quedar tumbado.",
+        "Usage": ""
+      }
+    ],
+    "Actions": [
+      {
+        "Name": "Embestir",
+        "Content": "Ataque de arma cuerpo a cuerpo: +5 al ataque, alcance 5 pies, un objetivo. Impacto: 6 (1d6+3) puntos de daño contundente.",
+        "Usage": ""
+      },
+      {
+        "Name": "Pezuñas",
+        "Content": "Ataque de arma cuerpo a cuerpo: +5 al ataque, alcance 5 pies, una criatura tumbada. Impacto: 8 (2d4+3) puntos de daño contundente.",
+        "Usage": ""
+      }
+    ],
+    "Reactions": [],
+    "LegendaryActions": [],
+    "Description": "\n\nhttp://srd.nosolorol.com/DD5/animales/alce.html",
+    "Player": "",
+    "Version": "2.16.0",
+    "ImageURL": "",
+    "LastUpdateMs": 1604953579477
+  }
+}
