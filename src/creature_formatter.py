@@ -19,12 +19,12 @@ def format_monster(m: Dict):
     armor_class_notes_array = []
     armor_class_notes = ""
 
-    if 'type' in m['armor_class'][0]:
+    if 'type' in m['armor_class'][0] and m['armor_class'][0]['type']:
         armor_class_notes_array.append(m['armor_class'][0]['type'])
     if len(m['armor_class']) > 1:
-        for ac in m['armor_class']:
+        for ac in m['armor_class'][1:]:
             ac_string = f"{ac['amount']} {ac['condition']}"
-            if 'type' in ac:
+            if 'type' in ac and ac['type']:
                 ac_string += f" ({ac['type']})"
             armor_class_notes_array.append(ac_string)
         armor_class_notes = f"({', '.join(armor_class_notes_array)})"
