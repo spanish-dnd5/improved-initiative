@@ -60,7 +60,7 @@ def format_monster(m: Dict):
             "InitiativeAdvantage":
             False,
             "Speed":
-            [f"{type_} {amount}" for type_, amount in m['speed'].items()],
+            [f"{type_} {amount} pies" for type_, amount in m['speed'].items()],
             "Abilities": {
                 "Str": m['abilities']['strength'],
                 "Dex": m['abilities']['dexterity'],
