@@ -15,12 +15,12 @@ def construct_actions(array, subtype):
         if subtype in element:
             description += '\n'
             for subelement in element[subtype]:
-                name = subelement['name'].replace('espacio', 'slot')
-                name = name.replace('Nivel 1', '1st level')
-                name = name.replace('Nivel 2', '2nd level')
-                name = name.replace('Nivel 3', '3rd level')
-                name = re.sub(r'Nivel (\d)', r'\1th level', name)
-                description += f"\n• **{name}**: {subelement['description']}"
+                subname = subelement['name'].replace('espacio', 'slot')
+                subname = subname.replace('Nivel 1', '1st level')
+                subname = subname.replace('Nivel 2', '2nd level')
+                subname = subname.replace('Nivel 3', '3rd level')
+                subname = re.sub(r'Nivel (\d)', r'\1th level', subname)
+                description += f"\n• **{subname}**: {subelement['description']}"
         result.append({'Name': name, 'Content': description, 'Usage': ''})
     return result
 
