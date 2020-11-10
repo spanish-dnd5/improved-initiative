@@ -39,10 +39,6 @@ def format_monster(m: Dict):
             armor_class_notes_array.append(ac_string)
         armor_class_notes = f"({', '.join(armor_class_notes_array)})"
 
-    legendary_actions = []
-    if 'list' in m['legendary_actions']:
-        legendary_actions = m['legendary_actions']['list']
-
     tags = f" ({', '.join(m['tags'])})" if m['tags'] else ""
     _, link = m['source'].split(':', 1)
     return {
@@ -56,7 +52,7 @@ def format_monster(m: Dict):
             "Source":
             "http://srd.nosolorol.com/DD5/",
             "Type":
-            f"{m['size']} {m['type']}{tags}, {m['alignment']}",
+            f"{m['type']} {m['size']}{tags}, {m['alignment']}",
             "HP": {
                 "Value": m['hit_points'],
                 "Notes": f"({m['hit_dice']})"
@@ -108,7 +104,8 @@ def format_monster(m: Dict):
             "Reactions":
             construct_actions(m['reactions'], 'extra'),
             "LegendaryActions":
-            construct_actions(legendary_actions, 'extra'),
+            construct_actions(getattr(m['legendary_actions'], 'list', []),
+                              'extra'),
             "Description":
             f"{m['description']}\n\n{link}",
             "Player":
