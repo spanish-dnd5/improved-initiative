@@ -1,3 +1,4 @@
+import re
 import time
 from typing import Dict
 
@@ -6,11 +7,20 @@ def construct_actions(array, subtype):
     result = []
     for element in array:
         name = element['name'].replace('espacio', 'slot')
+        name = name.replace('día', 'Day')
+        name = name.replace('Lanzamiento de conjuros innato',
+                            'Innate Spellcasting')
+        name = name.replace('Lanzamiento de conjuros', 'Spellcasting')
         description = element['description']
         if subtype in element:
             description += '\n'
             for subelement in element[subtype]:
-                description += f"\n• {subelement['name'].replace('espacio', 'slot')}: {subelement['description']}"
+                name = subelement['name'].replace('espacio', 'slot')
+                name = name.replace('Nivel 1', '1st level')
+                name = name.replace('Nivel 2', '2nd level')
+                name = name.replace('Nivel 3', '3rd level')
+                name = re.sub(r'Nivel (\d)', r'\1th level', name)
+                description += f"\n• **{name}**: {subelement['description']}"
         result.append({'Name': name, 'Content': description, 'Usage': ''})
     return result
 
